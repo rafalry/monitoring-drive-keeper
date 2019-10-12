@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "flask": "^0.2.10",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "dateformat": "^3.0.3",
+    "express": "^4.17.1",
     "googleapis": "^43.0.0"
   }
 }
