@@ -59,7 +59,11 @@ async function renameRootFolders() {
     }
   })
 }
-renameRootFolders()
+
+function execute() {
+  renameRootFolders()
+}
+
 module.exports = {
-  renameRootFolders
+  execute
 }
