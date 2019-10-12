@@ -28,7 +28,7 @@ async function listRootFolders() {
     fields: 'files(id, name)',
     q: "'root' in parents and mimeType='application/vnd.google-apps.folder' and trashed = false"
   })
-  console.log('Fetched folders', res.data.files)
+  console.log('Fetched folders:', res.data.files.map((file) => file.name).join(', '))
   return res.data.files
 }
 
@@ -48,7 +48,7 @@ async function renameRootFolders() {
     if (!folder.name.match(datedFolderNameRegex)) {
       const newName = folder.name + todaySuffix
       if (folders.map((folder) => folder.name).indexOf(newName) === -1) {
-        console.log(`Processing folder ${folder.name} with id ${folder.id}, rename to ${newName}`)
+        console.log(`Processing folder ${folder.name} with id ${folder.id}, try rename to ${newName}`)
         const renamedFolder = await renameFolderOnDrive(folder.id, newName)
         console.log(`Renamed ${folder.name} to ${renamedFolder.name}`)
       } else {
@@ -59,5 +59,7 @@ async function renameRootFolders() {
     }
   })
 }
-
 renameRootFolders()
+module.exports = {
+  renameRootFolders
+}
