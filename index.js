@@ -50,12 +50,12 @@ async function renameRootFolders() {
       if (folders.map((folder) => folder.name).indexOf(newName) === -1) {
         console.log(`Processing folder ${folder.name} with id ${folder.id}, try rename to ${newName}`)
         const renamedFolder = await renameFolderOnDrive(folder.id, newName)
-        console.log(`Renamed ${folder.name} to ${renamedFolder.name}`)
+        console.debug(`Renamed ${folder.name} to ${renamedFolder.name}`)
       } else {
-        console.log(`Skipping folder ${folder.name} with id ${folder.id}, folder with name ${newName} already exists`)
+        console.debug(`Skipping folder ${folder.name} with id ${folder.id}, folder with name ${newName} already exists`)
       }
     } else {
-      console.log(`Skipping folder ${folder.name} with id ${folder.id}`)
+      console.debug(`Skipping folder ${folder.name} with id ${folder.id}`)
     }
   })
 }
