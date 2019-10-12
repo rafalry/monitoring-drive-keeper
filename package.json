@@ -1,0 +1,15 @@
+{
+  "name": "monitoring-drive-keeper",
+  "version": "1.0.0",
+  "description": "Maintain monitoring storage on cloud drive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "flask": "^0.2.10",
+    "googleapis": "^43.0.0"
+  }
+}
